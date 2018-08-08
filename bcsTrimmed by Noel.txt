@@ -1,0 +1,46 @@
+Mel,
+Please help Jerry provide an answer to ANA.  If you are unable to provide an answer by Aug 3, 2018, then please let me know.  Thanks.
+
+FROM: THE BOEING COMMUNICATION SYSTEM    [MESSAGE NUMBER:4-1X16EVO] Coordination
+ACTIVITY DATE: 20 Jul 2018 1314 US PACIFIC TIME / 20 Jul 2018 2014 GMT
+From the Boeing Communication System for Jaihong Ahn Replies to this email will be recorded in the Boeing Communication system and will be sent to all names listed below. This Coordination message is sent to the following people at Boeing: Noel G Johnson
+DUE DATE: 25-Jul-2018 12:00 US PACIFIC TIME
+SUBJECT: //HAMASHIMA T5-FOE TZ// Clearification of 737NG FCOM rev.29 descriptions
+DESIRED ACTION:
+Hi, Noel, Could you kindly review and comment on ANA's inquries? Thank you. Regards,
+Jerry Ahn
+
+FROM: THE BOEING COMPANY TO: All Nippon Airways Co., Ltd. (ANA)     [MESSAGE NUMBER:ANA-ANA-18-2318-01C] Request
+MESSAGE DATE: 20 Jul 2018 0222 US PACIFIC TIME / 20 Jul 2018 0922 GMT
+Your message has been received. If a response has been requested, it will be provided on or before 26-Jul-2018. This message is sent to the following:
+Daiki Hamashima, at All Nippon Airways Co., Ltd.    Taichi Sato, at All Nippon Airways Co., Ltd.    Masayuki Senoo, at All Nippon Airways Co., Ltd.
+Tomoya Tarumi, at All Nippon Airways Co., Ltd.
+SERVICE REQUEST ID: 4-4173114048
+PRIORITY: Routine
+ACCOUNT: All Nippon Airways Co., Ltd. (ANA)
+DUE DATE: 26-Jul-2018
+PROJECT: BFSTYO-ANA-Tokyo, Japan
+PRODUCT: 17 - FCOM Technical Content, Systems (Vol 2), Misc
+SUBJECT: //HAMASHIMA T5-FOE TZ// Clearification of 737NG FCOM rev.29 descriptions
+REFERENCES:
+/A/ Attachment FCOM Rev.29 10.11.30
+/B/ Attachment FCOM Rev.29 11.10.26
+/C/ Attachment FCOM Rev.29 SP 11.2
+/D/ Attachment FCOM Rev.29 11.40.24
+DESCRIPTION:
+=====================
+ANA has several questions for 737NG FCOM rev.29 descriptions.
+1/ In the Ref/A/, it is described / initial climb or descent from a new MCP altitude is not possible in LVL CHG, VNAV or V/S
+modes with the autopilot engaged /
+2/ In the Ref/B/, it is described /The PWS test lasts approximately 15 seconds and complication is indicated with an oral notification./
+3/ In the Ref/D/, the explanation is revised.
+
+Q1-1/ ANA has a doubt about the wording to use "from" in the description 1/ . ANA understanding of this description is even if pilots set a new MCP altitude, it is impossible to climb or descent TO the MCP altitude. If it is positive, the wording should be changed from "from" to "to" in this sentence. ANA would like to know our understanding and pointing out is correct. If it is negative, please let us know the meaning of this wording.
+Q1-2/ ANA is also wondering the wording of "initial climb and descent" in the description 1/ . ANA believes wording of "initial climb" only uses climb just after takeoff phase and never use for the phase after leveled flight. Therefore, ANA assumes "initial" should be deleted in this sentence. ANA would
+like to know our understanding and pointing out is correct. If it is negative, please let us know the meaning of this wording.
+Q2-1/ ANA would like to know "complication" is pointing the test indications described in the Ref/C/. Q3-1/ It is described in Ref/D/, /by re-entering the RTE Page on both CDUs and completing an EXECution or ERASE of a flight plan./ However, ANA believes CDU has cross-reference function, therefore ANA assumes it does not need to re-enter on both CDU. ANA would like to know the meaning of "Both CDUs" in this sentence.
+Q3-2/ ANA cannot understand the situation description in Ref/D/ / by making another edit to the modified plan./. Please let us know the example for this situation with detail explain for what "another edit" and "the modified plan" is pointing.
+
+DAIKI HAMASHIMA
+OPERATIONS ENGINEERING TEAM    FLIGHT OPERATION STANDARDS    ALL NIPPON AIRWAYS CO., LTD.    TEL +81-50-3755-4456    Email d.hamashima@ana.co.jp
+

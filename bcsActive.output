@@ -1,0 +1,7 @@
+Exception in Tkinter callback
+Traceback (most recent call last):
+  File "C:\Program Files\Python36\lib\tkinter\__init__.py", line 1702, in __call__
+    return self.func(*args)
+  File "C:/Users/eu360a/Documents/#FTD Projects/bcsActive/bcsActive.py", line 128, in <lambda>
+    self.bFocal.bind('<Enter>',lambda e:bcsActive_support.bFocal(e))
+TypeError: 'StringVar' object is not callable
