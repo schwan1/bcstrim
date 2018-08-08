@@ -11,38 +11,8 @@ try:
 except ImportError:
     import tkinter.ttk as ttk
     py3 = True
-# New bcs active code ********************************
-"""
-def set_Tk_var():
-    global mNumber
-    mNumber = StringVar()
-    global customer
-    customer = StringVar()
-    global bFocal
-    bFocal = StringVar()
-    global pLine
-    pLine = StringVar()
-    global pType
-    pType = StringVar()
-    global product
-    product = StringVar()
-    global subject
-    subject = StringVar()
-    global mDate
-    mDate = StringVar()
-    global bcsDueDate
-    bcsDueDate = StringVar()
-    global ftdDueDate
-    ftdDueDate = StringVar()
-    global ftdLead
-    ftdLead = StringVar()
-    global aTeam
-    aTeam = StringVar()
-    global attachment
-    attachment = StringVar()
-    global combobox
-    combobox = StringVar()
-"""
+# Email tab code ********************************
+
 def bFocal(p1):
     print('bcsTrimmer_support.bFocal')
     sys.stdout.flush()
