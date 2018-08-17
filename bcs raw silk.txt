@@ -1,0 +1,87 @@
+FROM: THE BOEING COMMUNICATION SYSTEM
+[MESSAGE NUMBER:3-1YL5YIZ] Coordination
+ACTIVITY DATE: 07 Aug 2018 0741 US PACIFIC TIME / 07 Aug 2018
+1441 GMT
+From the Boeing Communication System for Roy A Ninonuevo
+Replies to this email will be recorded in the Boeing
+Communication system and will be sent to all names listed below.
+This Coordination message is sent to the following people at
+Boeing:
+Payam Nashery, Noel G Johnson
+DUE DATE: 10-Aug-2018 23:59 US PACIFIC TIME
+SUBJECT: FCOM Query
+DESIRED ACTION:
+CC: Payam,
+Noel,
+SLK has some questions about differences they see between their
+NG and MAX FCOM.
+//QUOTE
+We have the following query for the MAX and NG FCOM.
+1) For the SYS switch, it refers to the lower DU which does not
+exist in the MAX.
+2) For the "SPEED TRIM FAIL" light, the MAX FCOM does not state
+that it indicates failure of the speed trim system like the way
+the NG FCOM does.
+Thank you.
+Attached is a screenshot of the FCOM.
+//END QUOTE
+------------------------------------------------------------------------------------------------------------- Page 1 of 4 ------
+Can you provide the explanation for the differences they see?
+Thanks,
+Roy
+===========================
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++
+FROM: THE BOEING COMPANY
+TO: SilkAir (SLK)
+[MESSAGE NUMBER:SLK-SLK-18-0064-01C] Request
+MESSAGE DATE: 07 Aug 2018 0240 US PACIFIC TIME / 07 Aug 2018
+0940 GMT
+Your message has been received.
+This message is sent to the following:
+Mr. Kelwin Chin, at SilkAir
+SERVICE REQUEST ID: 3-4267737660
+PRIORITY: No Action Required
+ACCOUNT: SilkAir (SLK)
+PROJECT: BFSSIN-SLK Singapore-Singapore
+PRODUCT TYPE: Flight Operations
+PRODUCT LINE: 737
+PRODUCT: 17 - FCOM Technical Content, Systems
+(Vol 2), Misc
+ATA:
+SUBJECT: FCOM Query
+REFERENCES:
+/A/ Attachment 737 Max Speed Trim
+/B/ Attachment 737 NG Speed Trim
+/C/ Attachment Flight Control Surface Position Indicator
+------------------------------------------------------------------------------------------------------------- Page 2 of 4 ------
+DESCRIPTION:
+=====================
+Hi,
+We have the following query for the MAX and NG FCOM.
+1) For the SYS switch, it refers to the lower DU which does not
+exist in the MAX.
+2) For the "SPEED TRIM FAIL" light, the MAX FCOM does not state
+that it indicates failure of the speed trim system like the way
+the NG FCOM does.
+Thank you.
+Attached is a screenshot of the FCOM.
+DESIRED ACTION:
+======================
+No Action Required
+Mr. Kelwin Chin
+kelwin_chin@singaporeair.com.sg
+65403173
+When present, attachment names are listed below this line:
+Attachment: 737 Max Speed Trim.jpg
+Attachment: 737 NG Speed Trim.jpg
+Attachment: Flight Control Surface Position Indicator.png
+Service Request System:
+https://myboeingfleet.boeing.com/bsrs/client/index.html#/communi
+cationsDetail/3-1YKWFCV
+(Note: MyBoeingFleet portal login is required to access link in
+the Service Request System)
+------------------------------------------------------------------------------------------------------------- Page 3 of 4 ------
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++
+------------------------------------------------------------------------------------------------------------- Page 4 of 4 ------

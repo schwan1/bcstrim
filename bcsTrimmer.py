@@ -24,6 +24,7 @@ def vp_start_gui():
     root.mainloop()
 
 w = None
+
 def create_BCS_Message_Converter(root, *args, **kwargs):
     '''Starting point when module is imported by another program.'''
     global w, w_win, rt
@@ -73,7 +74,6 @@ class BCS_Message_Converter:
             [('selected', _compcolor), ('active',_ana2color)])
         self.TNotebook1 = ttk.Notebook(top)
         self.TNotebook1.place(relx=0.02, rely=0.01, relheight=0.93, relwidth=0.95)
- #       self.TNotebook1.place(relx=0.02, rely=0.04, relheight=0.89, relwidth=0.95)
         self.TNotebook1.configure(width=854)
         self.TNotebook1.configure(takefocus="")
         self.TNotebook1_t0 = Frame(self.TNotebook1)
@@ -110,11 +110,6 @@ class BCS_Message_Converter:
         self.btnConvert.configure(text='''Convert''')
         self.btnConvert.bind('<Button-1>',lambda e:bcsTrimmer_support.btnConvert_1click(e))
 
-#        self.myanchor = ttk.Button(self.TNotebook1_t1)
- #       self.myanchor.place(relx=0.85, rely=0.89, height=30, width=98)
-#        self.myanchor.configure(takefocus="")
- #       self.myanchor.configure(text='''Tbutton''')
-
         self.btnExit = ttk.Button(top)
         self.btnExit.place(relx=0.87, rely=0.95, height=30, width=98)
         self.btnExit.configure(takefocus="")
@@ -123,7 +118,7 @@ class BCS_Message_Converter:
 
 
 
-        #add second tab objects email
+        #Start of email compose page
         
         self.TFrame1 = ttk.Frame(self.TNotebook1_t1)
         self.TFrame1.place(relx=0.01, rely=0.03, relheight=0.27, relwidth=0.98)
@@ -367,7 +362,7 @@ class BCS_Message_Converter:
         self.message.configure(selectbackground="#c4c4c4")
         self.message.configure(selectforeground="black")
         self.message.configure(width=10)
-        self.message.configure(wrap=NONE)
+        self.message.configure(wrap=WORD)
 
         self.TFrame3 = ttk.Frame(self.TNotebook1_t1)
         self.TFrame3.place(relx=0.01, rely=0.69, relheight=0.20, relwidth=0.98)
@@ -415,14 +410,6 @@ class BCS_Message_Converter:
         self.email.configure(wrap=NONE)
 
 
-#        self.exit = ttk.Frame(self.TNotebook1_t1)
-#        self.exit = ttk.Button(top)
-#        self.exit.place(relx=0.92, rely=0.99, height=30, width=78)
-#        self.exit.configure(takefocus="")
-#        self.exit.configure(text='''Exit''')
-#        self.exit.bind('<Button-1>',lambda e:bcsTrimmer_support.exit_lclick(e))
-
-
         self.menubar = Menu(top,font=font9,bg=_bgcolor,fg=_fgcolor)
         top.configure(menu = self.menubar)
 
@@ -435,10 +422,8 @@ class BCS_Message_Converter:
                 label="File")
 
 
-#        self.TFrame4 = ttk.Frame(top)
         self.TFrame4 = ttk.Frame(self.TNotebook1_t1)
         self.TFrame4.place(relx=0.01, rely=0.90, relheight=0.07, relwidth=0.28)
-#        self.TFrame4.place(relx=0.01, rely=0.98, relheight=0.07, relwidth=0.28)
         self.TFrame4.configure(relief=GROOVE)
         self.TFrame4.configure(borderwidth="2")
         self.TFrame4.configure(relief=GROOVE)
@@ -456,7 +441,6 @@ class BCS_Message_Converter:
         self.search.configure(text='''Search''')
         self.search.bind('<Button-1>',lambda e:bcsTrimmer_support.search_1click(e))
 
-#        self.createEmail = ttk.Frame(self.TNotebook1_t1)
         self.createEmail = ttk.Button(self.TNotebook1_t1)
         self.createEmail.place(relx=0.45, rely=0.91, height=30, width=128)
         self.createEmail.configure(takefocus="")

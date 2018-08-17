@@ -1,19 +1,28 @@
 import re
-import numpy as np
 
-mSubject = ""
-mNumber = ""
-mDate = ""
-mDueDate = ""
-mFrom = ""
-mDesc = ""
-mRef = [""]
-productLine =""
-product = ""
-account = ""
-project = ""
-priority = ""
-mBody = ""
+#BCS message dictionary
+bcsInfo = {
+    'mNumber': '' ,
+    'customer': '' ,
+    'bFocal': '' ,
+    'pLine': '' ,
+    'pType': '' ,
+    'product': '' ,
+    'subject': '' ,
+    'mDate': '' ,
+    'bcsDueDate': '' ,
+    'ftdDueDate': '' ,
+    'ftdLead':'' ,
+    'aTeam':'' ,
+    'ftdTeam':'[]' ,
+    'attachment':'[]' ,
+    'bcsMessage':'' ,
+    'bcsDescription':'' ,
+    'bcsDesire':'' ,
+    'stdPhrase':'' ,
+    'email':'' ,
+    'bcsRawData':'' ,
+    }
 
 def after(value, a):
     # Find and validate first part.
@@ -43,68 +52,132 @@ def before(value, a):
     return value[0:pos_a]
 
 
-def subextract(mask, text):
-    # Extract subject line
-    sub = re.findall(mask, text)
-    for subject in sub:
-        subject = subject.replace('\n',' ')
-        subject = subject.rstrip()
-        subject = after(subject, '// ')
-    # Return last found instance in message
-    return subject
-   
-def dateextract(mask, text):
-    # Extract message line
-    mdate = re.findall(mask, text)
-    
-    for alldate in mdate:
-        alldate = alldate.replace('\n',' ')
-        alldate = alldate.rstrip()
-        alldate = after(alldate, ':')
-        alldate = alldate.lstrip()
-    # Return last found instance in message
-    return alldate
+def messageconvert():
+    bcsRaw = open("bcsraw.txt", "r")
+    bcsLines = bcsRaw.readlines()
+    bcsRaw.close()
+    x = 3 
+    # Loop for filling out data in bcsInfo dictionary
+    while x < len(bcsLines):
 
-def descextract(mask, text):
-    # Extract message line
-    mdesc = re.findall(mask, text)
-    for alldesc in mdesc:
-        alldesc = alldesc.replace('\n',' ')
-        alldesc = alldesc.rstrip()
-        alldesc = after(alldesc, ':')
-       # alldesc = alldesc.lstrip()
-    # Return last found instance in message
-    return alldesc
+        # Find line that has the Boeing focals name
+        if re.search('^From the Boeing', bcsLines[x]) :
+            focal = after(bcsLines[x], ' for ')
+            focal = focal.rstrip()
+            bcsInfo = {'bFocal': focal}
+            print("bFocal>"+bcsInfo['bFocal'])
+            
+        # Find the line that indicates the next line contains FTD focal(s) names 
+        elif re.search('^Boeing.*', bcsLines[x]) :
+            x += 1
+            focal = bcsLines[x]
+            focal = focal.rstrip()
+            bcsInfo = {'ftdFocal': focal}
+            print("ftdFocal>"+bcsInfo['ftdFocal'])
+            
+        # Find the line that has the BCS message due date
+        elif re.search('^DUE DATE:.*', bcsLines[x]) :
+            keyDate = after(bcsLines[x], 'DUE DATE: ')
+            keyDate = keyDate.rstrip()
+            bcsInfo = {'dueDate': keyDate[:11]}
+            print("dueDate>"+bcsInfo['dueDate'])
+            
+        # Find the line that has the BCS message number
+        elif re.search('^.MESSAGE NUMBER:.*', bcsLines[x]) :
+            mesNumber = after(bcsLines[x], 'MESSAGE NUMBER:')
+            bcsInfo = {'mNumber': mesNumber[:19]}
+            print("mNumber>"+bcsInfo['mNumber'])
+            
+        # Find the line that has the BCS message date
+        elif re.search('^MESSAGE DATE:.*', bcsLines[x]) :
+            keyDate = after(bcsLines[x], 'MESSAGE DATE: ')
+            bcsInfo = {'mDate': keyDate[:11]}
+            print("mDate>"+bcsInfo['mDate'])
+ 
+        # Find the line that has the BCS customer
+        elif re.search('^ACCOUNT:.*', bcsLines[x]) :
+            customer = after(bcsLines[x], 'ACCOUNT: ')
+            bcsInfo = {'customer': customer}
+            print("customer>"+bcsInfo['customer'])
+
+        # Find the line that has the BCS product type
+        elif re.search('^PRODUCT TYPE:.*', bcsLines[x]) :
+            pType = after(bcsLines[x], 'PRODUCT TYPE: ')
+            bcsInfo = {'pType': pType}
+            print("pType>"+bcsInfo['pType'])
+
+        # Find the line that has the BCS product line
+        elif re.search('^PRODUCT LINE:.*', bcsLines[x]) :
+            pLine = after(bcsLines[x], 'PRODUCT LINE: ')
+            bcsInfo = {'pLine': pLine}
+            print("pLine>"+bcsInfo['pLine'])
+
+        # Find the line that has the BCS product 
+        elif re.search('^PRODUCT:.*', bcsLines[x]) :
+            product = after(bcsLines[x], 'PRODUCT: ')
+            if bcsLines[x+1] != "ATA::":
+                product = product.rstrip() + bcsLines[x+1]
+                x += 1
+            bcsInfo = {'product': product}
+            print("product>"+bcsInfo['product'])
+           
+
+        # Find the line that has the BCS subject
+        elif re.search('^SUBJECT:.*', bcsLines[x]) :
+            subject = after(bcsLines[x], 'SUBJECT: ')
+            subject = after(subject, '// ')
+            if bcsLines[x+1] != "REFERENCES:":
+                subject = subject.rstrip() + bcsLines[x+1]
+                x += 1
+            bcsInfo = {'subject': subject}
+            print("subject>"+bcsInfo['subject'])
+     
+        # Find the line that has the BCS attachments
+        elif re.search('^REFERENCES:.*', bcsLines[x]) :
+            x += 1
+            attachment = bcsLines[x]
+            while re.search(r'\/', bcsLines[x+1]):
+                attachment = attachment.rstrip() + "," + bcsLines[x+1]
+                x += 1
+            bcsInfo = {'attachment': attachment}
+            print("attachment>"+bcsInfo['attachment'])
+
+        # Find the line that has the BCS Message
+        elif re.search('^DESCRIPTION:.*', bcsLines[x]) :
+            x += 2
+            templine = bcsLines[x]
+            bcsDescription = templine.rstrip()
+            da = -1
+            # Combine all the lines in the description
+            while  da < 0 :
+                if templine[0:5] == '-----' :
+                    x += 1
+                    templine = bcsLines[x]
+
+                bcsDescription = bcsDescription+templine
+#                bcsDescription = bcsDescription.rstrip()
+                x += 1
+                templine = bcsLines[x]
+                da = templine.find('DESIRED ACTION:')
+            
+            bcsInfo = {'bcsDescription': bcsDescription}
+            print("bcsDescription>"+bcsInfo['bcsDescription'])
+            x += 2
+            templine = bcsLines[x]
+#            bcsDesire = templine.rstrip()
+#            x += 1
+            bcsDesire = ''
+            while templine[0:5] != '-----' :
+                templine = bcsLines[x]
+#                bcsDesire = bcsDesire.rstrip()
+                bcsDesire = bcsDesire + templine
+                x += 1
+                templine = bcsLines[x]
+            bcsInfo = {'bcsDesire': bcsDesire}
+            print("bcsDesire>"+bcsInfo['bcsDesire'])
 
 
-def numextract(mask,text):
-    mNumber = ""
-    # Extract message line
-    mNum = re.findall(mask, text)
-    for mNumber in mNum:
-        mNumber = mNumber.replace('\n',' ')
-        mNumber = mNumber.rstrip()
-        mNumber = after(mNumber, 'A')
-    # Return last found instance in message
-    return mNumber
+        x += 1 
+#        print(bcsLines[x])
 
-
-
-try:
-    with open("BCS Raw 4-1x16EVO.txt",'r') as my_file_handle:
-        mtext = my_file_handle.read()
-except FileNotFoundError:
-    mtext = print ('File Read Error')
-    
-# Initialize all variables for BCS message content
-
-mSubject = subextract('SUBJECT:.+\n',mtext)
-mNumber = numextract('^.MESSAGE NUMBER:',mtext)
-mDueDate = dateextract('DUE DATE:.+\n',mtext)
-mDate = dateextract('ACTIVITY DATE:.+\n',mtext)
-mDesc = descextract('DESCRIPTION:\n.+\n.+\n',mtext)
-
-print (mSubject)
-print (mDueDate)
-print (mDate)
-print (mDesc)
+main()
