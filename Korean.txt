@@ -1,0 +1,175 @@
+FROM: THE BOEING COMMUNICATION SYSTEM
+[MESSAGE NUMBER:3-1YWRZNC] Coordination
+ACTIVITY DATE: 16 Aug 2018 1443 US PACIFIC TIME / 16 Aug 2018
+2143 GMT
+From the Boeing Communication System for Jaihong Ahn
+Replies to this email will be recorded in the Boeing
+Communication system and will be sent to all names listed below.
+This Coordination message is sent to the following people at
+Boeing:
+Noel G Johnson
+DUE DATE: 21-Aug-2018 14:59 US PACIFIC TIME
+SUBJECT: B737 OMB Query
+DESIRED ACTION:
+Hi, Noel,
+Could you kindly investigate Korean Air's questions on OMB-59
+and OMB-42?
+Q1. Please review B737 FCOM OMB KAL-59(B5) and cancel if
+appropriate..
+Q2. Is Service Letter /Ref B/ enough to remove OMB KAL-42(B5)?
+Q3. If answer is "NO", is there a way to delete this? Or Is this
+bulletin continuously remaining until operating B737 with
+Honeywell Weather Radar?
+Regards,
+Jerry Ahn
+------------------------------------------------------------------------------------------------------------- Page 1 of 7 ------
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++
+FROM: THE BOEING COMPANY
+TO: Korean Air (KAL)
+[MESSAGE NUMBER:KAL-KAL-18-1436-01F] Inbound From Field
+MESSAGE DATE: 15 Aug 2018 2226 US PACIFIC TIME / 16 Aug 2018
+0526 GMT
+The following message is distributed to the following people at
+Korean Air:
+Hyun-Jin Kim
+Service Request ID: 3-4285977906
+Message Due Date: 22-Aug-2018 07:59 US PACIFIC TIME
+Field Service Base: BFSSEL-KAL
+Product Type: Flight Operations Product Line: 737
+Series/Product: 17 - FCOM Technical Content, Systems (Vol 2),
+Misc ATA:
+SUBJECT: B737 OMB Query
+REFERENCES:
+/A/ B737 FCOM OMB KAL-42(B5) (attached)
+/B/ 737-SL-34-188 status (attached)
+/C/ B737 FCOM OMB KAL-59(B5) (attached)
+/D/ B737 ADIRU position 1 installed status (attached)
+/E/ B737 ADIRU position 2 installed status (attached)
+/F/ ADIRU IPC References (attached)
+DESCRIPTION:
+Korean Air have questions regarding the ref /A/ and ref /C/ OMB:
+------------------------------------------------------------------------------------------------------------- Page 2 of 7 ------
+Ref /C/ OMB provide recommended procedures for B737NG airplanes
+with at least one HG2050BC02 ADIRU installed. KAL checked the
+installed status and found that all of their 737NG aircraft have
+only P/N HG2050BC04 or P/N HG2050BC11.
+See Ref /D/ and /E/ installation status for details.
+Additionally, per the ref /F/ IPC the HG2050BC02 cannot be
+installed after removal.
+So please review B737 FCOM OMB KAL-59(B5) can be canceled.
+Regarding the ref /A/ OMB, Korean Air note that it was released
+on May 3, 2012 and this bulletin has remained for more than 5
+years. The OMB noted "Honeywell has developed software
+modifications that should significantly reduce the occurrences
+of false PWS alerts. These modifications also include numerous
+other changes and enhancements. Service Letters 737-SL-34-188
+and 737-SL-34-189 provide additional information about these
+changes.
+Korean Air checked that those SL was accomplished or not in
+KAL's ERP system, and found 737-SL-34-188 was completed for B737
+with Honeywell Weather Radar.
+REQUIRED ACTION:
+1. Please review B737 FCOM OMB KAL-59(B5) and cancel if
+appropriate..
+2. Is Service Letter /Ref B/ enough to remove OMB KAL-42(B5)?
+3. If answer is "NO", is there a way to delete this? Or Is this
+bulletin continuously remaining until operating B737 with
+Honeywell Weather Radar?
+If attachments are referred to, and are not present, please
+access them by logging into MyBoeingFleet Service Requests
+------------------------------------------------------------------------------------------------------------- Page 3 of 7 ------
+application or contact your Boeing Field Service Representative.
+Service Request System:
+https://myboeingfleet.boeing.com/bsrs/client/index.html#/communi
+cationsDetail/3-1YVQ1HL
+(Note: MyBoeingFleet portal login is required to access link in
+the Service Request System)
+Fritz Wiest
+Boeing Field Service Team Leader - Seoul
+Tel: (VOIP): +1-425-234-9482
+O: +66-2 137 6060 C: +82 (0) 10 3700 7478
+e-mail: BFSSEL-KAL@Boeing.com
+Boeing Commercial Airplanes
+The Boeing Co.
+The following files are attached to this message:
+737-SL-34-188 status.xls, ADIRU IPC References.pdf, B737 ADIRU
+position 1 installed status.JPG, B737 ADIRU position 2 installed
+status.JPG, B737 FCOM OMB KAL-42(B5).pdf, B737 FCOM OMB KAL-
+59(B5).pdf
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++
+------------------------------------------------------------------------------------------------------------- Page 4 of 7 ------
+FROM: THE BOEING COMPANY
+TO: Korean Air (KAL)
+[MESSAGE NUMBER:KAL-KAL-18-1436-01F] Inbound From Field
+MESSAGE DATE: 15 Aug 2018 2226 US PACIFIC TIME / 16 Aug 2018
+0526 GMT
+The following message is distributed to the following people at
+Korean Air:
+Hyun-Jin Kim
+Service Request ID: 3-4285977906
+Message Due Date: 22-Aug-2018 07:59 US PACIFIC TIME
+Field Service Base: BFSSEL-KAL
+Product Type: Flight Operations Product Line: 737
+Series/Product: 17 - FCOM Technical Content, Systems (Vol 2),
+Misc ATA:
+SUBJECT: B737 OMB Query
+REFERENCES:
+/A/ B737 FCOM OMB KAL-42(B5) (attached)
+/B/ 737-SL-34-188 status (attached)
+/C/ B737 FCOM OMB KAL-59(B5) (attached)
+/D/ B737 ADIRU position 1 installed status (attached)
+/E/ B737 ADIRU position 2 installed status (attached)
+/F/ ADIRU IPC References (attached)
+DESCRIPTION:
+Korean Air have questions regarding the ref /A/ and ref /C/ OMB:
+Ref /C/ OMB provide recommended procedures for B737NG airplanes
+with at least one HG2050BC02 ADIRU installed. KAL checked the
+installed status and found that all of their 737NG aircraft have
+only P/N HG2050BC04 or P/N HG2050BC11.
+See Ref /D/ and /E/ installation status for details.
+Additionally, per the ref /F/ IPC the HG2050BC02 cannot be
+installed after removal.
+------------------------------------------------------------------------------------------------------------- Page 5 of 7 ------
+So please review B737 FCOM OMB KAL-59(B5) can be canceled.
+Regarding the ref /A/ OMB, Korean Air note that it was released
+on May 3, 2012 and this bulletin has remained for more than 5
+years. The OMB noted "Honeywell has developed software
+modifications that should significantly reduce the occurrences
+of false PWS alerts. These modifications also include numerous
+other changes and enhancements. Service Letters 737-SL-34-188
+and 737-SL-34-189 provide additional information about these
+changes.
+Korean Air checked that those SL was accomplished or not in
+KAL's ERP system, and found 737-SL-34-188 was completed for B737
+with Honeywell Weather Radar.
+REQUIRED ACTION:
+1. Please review B737 FCOM OMB KAL-59(B5) and cancel if
+appropriate..
+2. Is Service Letter /Ref B/ enough to remove OMB KAL-42(B5)?
+3. If answer is "NO", is there a way to delete this? Or Is this
+bulletin continuously remaining until operating B737 with
+Honeywell Weather Radar?
+If attachments are referred to, and are not present, please
+access them by logging into MyBoeingFleet Service Requests
+application or contact your Boeing Field Service Representative.
+Service Request System:
+https://myboeingfleet.boeing.com/bsrs/client/index.html#/communi
+cationsDetail/3-1YVQ1HL
+(Note: MyBoeingFleet portal login is required to access link in
+the Service Request System)
+------------------------------------------------------------------------------------------------------------- Page 6 of 7 ------
+Fritz Wiest
+Boeing Field Service Team Leader - Seoul
+Tel: (VOIP): +1-425-234-9482
+O: +66-2 137 6060 C: +82 (0) 10 3700 7478
+e-mail: BFSSEL-KAL@Boeing.com
+Boeing Commercial Airplanes
+The Boeing Co.
+The following files are attached to this message:
+737-SL-34-188 status.xls, ADIRU IPC References.pdf, B737 ADIRU
+position 1 installed status.JPG, B737 ADIRU position 2 installed
+status.JPG, B737 FCOM OMB KAL-42(B5).pdf, B737 FCOM OMB KAL-
+59(B5).pdf
+------------------------------------------------------------------------------------------------------------- Page 7 of 7 ------

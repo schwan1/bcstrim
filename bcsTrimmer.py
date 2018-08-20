@@ -316,10 +316,11 @@ class BCS_Message_Converter:
         self.aTeam.configure(takefocus="")
         self.aTeam.configure(cursor="ibeam")
 
-        self.TEntry13 = ttk.Entry(self.TFrame1)
-        self.TEntry13.place(relx=0.77, rely=0.79, relheight=0.12, relwidth=0.21)
-        self.TEntry13.configure(takefocus="")
-        self.TEntry13.configure(cursor="ibeam")
+        self.team = ttk.Combobox(self.TFrame1)
+        self.team.place(relx=0.77, rely=0.79, relheight=0.12, relwidth=0.21)
+        self.team.configure(textvariable=bcsTrimmer_support.team)
+        self.team.configure(takefocus="")
+        self.team.configure(cursor="ibeam")
 
         self.TFrame2 = ttk.Frame(self.TNotebook1_t1)
         self.TFrame2.place(relx=0.01, rely=0.32, relheight=0.35, relwidth=0.98)
