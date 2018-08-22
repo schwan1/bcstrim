@@ -1,0 +1,85 @@
+FROM: THE BOEING COMMUNICATION SYSTEM
+[MESSAGE NUMBER:3-1YZVXYQ]      Coordination
+ACTIVITY DATE:  20 Aug 2018 0843 US PACIFIC TIME / 20  Aug 2018 1543 GMT
+
+From the Boeing Communication System for Hamel Bakrania
+
+Replies to this email will be recorded in the Boeing Communication system and will be sent to all names listed below.
+
+This Coordination message is sent to the following people at Boeing:
+Payam Nashery
+
+
+DUE DATE:  21-Aug-2018 15:59 US PACIFIC TIME
+
+SUBJECT:  737-800W sn 29051 FCOM/QRH customization
+
+DESIRED ACTION:
+
+Hi Payam, 
+
+ISB is expecting to change the registration for MSN 29051/YC903. What is the latest they can tell us what it'll be to make it into the September 2018 revision?
+
+Thanks,
+Hamel Bakrania
+FLOE - Airline Support
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+MESSAGE NUMBER:  ISB-ISB-18-0049-01C
+
+The following message is distributed to the following people at AlbaStar.es:
+Juan C De Sola
+Service Request ID:  3-4292700266
+
+Message Due Date:     21-Aug-2018 15:59 US PACIFIC TIME
+
+Field Service Base:  BFSPMI
+
+Product Type:  Flight Operations	  Product Line:  737	Series/Product:  17 - FCOM Technical Content, Systems (Vol 2), Misc	       ATA:  
+
+SUBJECT: 737-800W sn 29051 FCOM/QRH customization
+
+INQUIRY TYPE:  Other    
+
+REFERENCES:
+
+DESCRIPTION:
+
+ =====================
+Dear Sirs
+Initial registration allocated to 737-800W sn 29051  (please see our e-mail sent on May, 21) was EI-FFK, but our CAA requires to be changed into Spanish registration EC-***
+
+DESIRED ACTION:
+======================
+We'll advise as soon as possible about the new registration once allocated. Hope it could be provided with advance enough to match the expeced delivery date (circa Sept. 26) of the customized FCOM/QRH.
+
+
+Juan C De Sola
+juancarlos.desola@albastar.es
++34677988592
+Flight Operations Technical Office
+
+
+REQUIRED ACTION:
+
+
+
+If attachments are referred to, and are not present, please access them by logging into MyBoeingFleet Service Requests application or contact your Boeing Field Service Representative.
+Service Request System: https://myboeingfleet.boeing.com/bsrs/client/index.html#/communicationsDetail/3-1YZRGLB
+(Note: MyBoeingFleet portal login is required to access link in the Service Request System)	
+
+
+
+
+
+
+Service Request System: https://myboeingfleet.boeing.com/bsrs/client/index.html#/communicationsDetail/3-1YZRGLB
+(Note: MyBoeingFleet portal login is required to access link in the Service Request System)
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

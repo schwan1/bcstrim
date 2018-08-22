@@ -1,0 +1,62 @@
+
+FROM: THE BOEING COMPANY
+TO: Xiamen Airlines (XIA)
+[MESSAGE NUMBER:XIA-XIA-18-0530-05B]      Boeing Response
+MESSAGE DATE:  02 Jul 2018 1432 US PACIFIC TIME / 02  Jul 2018
+2132 GMT
+The following message is distributed to the following people at
+Xiamen Airlines:
+Flight Technical Data, Isabelle Li
+Service Request ID:  4-4099544714
+Field Service Base:  BFSXMN
+Product Type:  Flight Operations   Product Line:  737
+Series/Product:  17 - FCOM Technical Content, Systems (Vol 2),
+Misc        ATA: 
+SUBJECT: Query on "Integrated Standby Flight Display"
+REFERENCES:
+/A/ XIA-XIA-18-0530-04C
+/B/ XIA-XIA-18-0530-01C
+/C/ Attachment Integrated Standby Flight Display-737MAX-V1V2-R0
+/D/ Attachment crew
+/E/ Attachment crew
+DESCRIPTION:
+Dear Sir/Madam:
+The photo our pilot took about Integrated Standby Flight Display
+is attached below.
+It was taken on 737NG and the Serial Number (SN) of the aircraft
+is B-1709.
+We also find that Xiamen Air's 737NG and 737MAX share the same
+Integrated Standby Flight Display.
+Could you check that please?
+Page 1 of 
+ ------------------------------------------------------------------------------------------------------------- 
+    ------
+18
+Best regards.
+Joanna Lin
+fss_data@xiamenair.com
++86592-5739836
+RESPONSE:
+Dear Joanna Lin,
+Xiamen Airlines has not selected the "Filled Cue" option for
+your Integrated Standby Flight Display on the 737 MAX aircraft,
+therefore your 737 MAX FCOM reflects the baseline option of
+"Split-Axis".
+If attachments are referred to, and are not present, please
+access them by logging into MyBoeingFleet Service Requests
+application or contact your Boeing Field Service Representative.
+Service Request System:
+https://myboeingfleet.boeing.com/bsrs/client/index.html#/communi
+cationsDetail/4-1WFS4DD
+(Note: MyBoeingFleet portal login is required to access link in
+the Service Request System) 
+Best regards,
+Daniel Liu
+Flight Operations Engineering
+Boeing Commercial Airplanes
+Telephone: (562) 797-1074
+E-Mail:    daniel.liu@boeing.com
+Page 2 of 
+ ------------------------------------------------------------------------------------------------------------- 
+    ------
+18

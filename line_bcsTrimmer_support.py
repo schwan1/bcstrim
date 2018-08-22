@@ -1,8 +1,6 @@
 import sys
 import re
 import datetime
-#BCS message dictionary
-
 
 try:
     from Tkinter import *
@@ -101,139 +99,46 @@ def btnConvert_1click(p1):
     sys.stdout.flush()
     obj = w.textScroll
     mtext = obj.get('1.0', 'end')
+    print('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+    print(mtext)
     bcsLines = mtext.splitlines()
-    notset = 'notset'
-    bcsInfo = {
-    'mNumber': notset,
-    'customer': notset,
-    'bFocal': notset ,
-    'pLine': notset ,
-    'pType': notset ,
-    'product': notset ,
-    'subject': notset ,
-    'mDate': notset ,
-    'bcsDueDate': notset ,
-    'ftdDueDate': notset ,
-    'ftdLead': notset ,
-    'aTeam': notset ,
-    'ftdTeam': notset ,
-    'attachment': notset ,
-    'bcsMessage': notset ,
-    'bcsDescription': notset ,
-    'bcsDesire': notset ,
-    'stdPhrase': notset ,
-    'email': notset ,
-    'bcsRawData': notset
-    }
 
 # Conversion of the BCS message pasted in and placing in fields on email tab
 
-   
+#BCS message dictionary
+    bcsInfo = {
+    'mNumber': '' ,
+    'customer': '' ,
+    'bFocal': '' ,
+    'pLine': '' ,
+    'pType': '' ,
+    'product': '' ,
+    'subject': '' ,
+    'mDate': '' ,
+    'bcsDueDate': '' ,
+    'ftdDueDate': '' ,
+    'ftdLead':'' ,
+    'aTeam':'' ,
+    'ftdTeam':'[]' ,
+    'attachment':'[]' ,
+    'bcsMessage':'' ,
+    'bcsDescription':'' ,
+    'bcsDesire':'' ,
+    'stdPhrase':'' ,
+    'email':'' ,
+    'bcsRawData':'' ,
+    }
     # Fill FTD team members
     team = ['Guest, Gregory C','Atkings, Mark A','Baca, Mark','Capece, Richard N','Dahlstrom, David B','Delgado, John C','Garcia, Avalito D','Gray, Susan S', 'Johnson, Emily A', 'Johnson, Noel G', 'Klabacha, Cheryl A', 'Lyon, Amber C', 'Nashery, Payam', 'Nguyen Helen H', 'Pople, Michael S', 'Sanderson, Brian K', 'Schwan, Mel E','Sharp, Keith A']
-    bcsInfo['ftdTeam'] = team
+    bcsInfo = {'ftdTeam': team}
     w.team['values'] = team
     w.team.current(0)
-
     #Clear all the conversion information fields from the last conversion
     clearform()
 
 # Start of the message conversion process
-    # Find the line that has the BCS focal
-    if bcsInfo['bFocal'] == 'notset':
-        focal = between(mtext, ' for ', 'Replies to')
-        focal = focal.rstrip()
-        bcsInfo['bFocal'] = focal
-        w.bFocal.insert(0,bcsInfo['bFocal'])
-    # Find the line that has the BCS focal
-    if bcsInfo['ftdLead'] == 'notset':
-        focal = between(mtext, 'Boeing:', 'DUE DATE:')
-        focal = focal.rstrip()
-        bcsInfo['ftdLead'] = focal
-        w.ftdLead.insert(0,bcsInfo['ftdLead'])
-    # Find the line that has the BCS message number
-    if bcsInfo['mNumber'] == 'notset':
-        mNumber = betweenlast(mtext, '[MESSAGE NUMBER:',']')
-        mNumber = mNumber.lstrip()
-        bcsInfo['mNumber'] = mNumber[:19]
-        w.mNumber.insert(0, bcsInfo['mNumber'])
-        print("mNumber>"+bcsInfo['mNumber'])
-    # Find the line that has the BCS customer
-    if bcsInfo['customer'] == 'notset':
-        customer = betweenlast(mtext, 'FROM: THE BOEING COMPANY','[MESSAGE NUMBER:')
-        customer = after(customer, 'TO:')
-        bcsInfo['customer'] = customer.strip()
-        w.customer.insert(0,bcsInfo['customer'])
-        print("customer>"+bcsInfo['customer'])
-    #Message date extraction
-    if bcsInfo['mDate'] == 'notset':
-        mDate = between(mtext, 'TO:','SERVICE REQUEST ID:')
-        mDate = after(mDate, 'MESSAGE DATE:')
-        if mDate == '' :
-            mDate = after(mDate, 'MESSAGE DATE:')
-        mDate=mDate.strip()
-        bcsInfo['mDate'] = mDate[:11]
-        w.mDate.insert(0,bcsInfo['mDate'])
 
-    #Due date extraction and FTD Due Date creation 
-    if bcsInfo['bcsDueDate'] == 'notset':
-        dueDate = betweenlast(mtext, 'DUE DATE:', 'SUBJECT:')
-        dueDate=dueDate.strip()
-        if dueDate != '':
-            bcsInfo['bcsDueDate'] = dueDate[:11]
-            w.bcsDueDate.insert(0,bcsInfo['bcsDueDate'])
-            #Add 14 days to the BCS message due date
-            tempDate = datetime.datetime.strptime(bcsInfo['bcsDueDate'], "%d-%b-%Y")+datetime.timedelta(days=14)
-            myDate='{:%d-%b-%Y}'.format(tempDate)
-            bcsInfo['ftdDueDate']=myDate
-            w.ftdDueDate.insert(0,myDate)
-    #Subject extraction
-    if bcsInfo['subject'] == 'notset':
-        subject=between(mtext, 'SUBJECT:', 'DESIRED ACTION:')
-        subject=subject.strip()
-        bcsInfo['subject'] = subject
-        w.subject.insert(0,bcsInfo['subject'])
-    #pType extraction  
-    if bcsInfo['pType'] == 'notset':
-        pType=between(mtext, 'Product Type:', 'Product Line:')
-        if pType == '' :
-            pType=between(mtext, 'PRODUCT TYPE:', 'PRODUCT LINE:')  
-        pType=pType.strip()
-        bcsInfo['pType'] = pType
-        w.pType.insert(0,bcsInfo['pType'])
-    #pLine extraction  
-    if bcsInfo['pLine'] == 'notset':
-        pLine=between(mtext, 'Product Line:', 'Series/Product:')
-        if pLine == '' :
-            pLine=between(mtext, 'PRODUCT LINE:', 'PRODUCT:')
-        pLine=pLine.strip()
-        bcsInfo['pLine'] = pLine
-        w.pLine.insert(0,bcsInfo['pLine'])
-    #Product extraction 
-    if bcsInfo['product'] == 'notset': 
-        product=between(mtext, 'Series/Product:', 'ATA:')
-        if product == '' :
-            product=between(mtext, 'PRODUCT:', 'ATA:')
-        product=product.strip()
-        bcsInfo['product'] = product
-        w.product.insert(0,bcsInfo['product'])
-    #Description and Desired action extraction
-    if bcsInfo['bcsDescription'] == 'notset':
-        bcsDescription = ''
-        fieldservice = ''
-        bcsDesired = '' 
-        bcsDescription=betweenlast(mtext, 'DESCRIPTION:', '+++++++++++')
-        bcsDescription=bcsDescription.strip()
-        fieldservice=betweenlast(mtext, 'DESCRIPTION:', '+++++++++++')
-        fieldservice=fieldservice.strip()
-        if bcsDescription == fieldservice :
-            bcsDescription = ''
-
-        bcsDesired=between(mtext, 'DESIRED ACTION:', '+++++++++++')
-        bcsDesired=bcsDesired.strip()
-        bcsDescription =  "Desired Action:\n\n" + bcsDesired + '\n\n\nASE Additional Description:\n'+bcsDescription + '\n\n\nField Service Description:\n\n'+ fieldservice
-        bcsInfo['bcsDescription'] = bcsDescription
-        w.message.insert(END, bcsInfo['bcsDescription'])
+    
 
     # Delete lines with  '-----' or '####' characters
     for i in range(len(bcsLines) - 1, -1, -1):
@@ -255,27 +160,97 @@ def btnConvert_1click(p1):
     j = 0 
     # Loop for filling out data in bcsInfo dictionary
     while x < len(bcsLines)-1 :
-        '''print (bcsLines[x])
+        print (bcsLines[x])
 
 
         # Find line that has the Boeing focals name
         if re.search('^From the Boeing', bcsLines[x]) :
             focal = after(bcsLines[x], ' for ')
             focal = focal.rstrip()
-            bcsInfo['bFocal'] = focal
+            bcsInfo = {'bFocal': focal}
             w.bFocal.insert(0,bcsInfo['bFocal'])
             print("bFocal>"+bcsInfo['bFocal'])
+            
         # Find the line that indicates the next line contains FTD focal(s) names 
         elif re.search('^Boeing.*', bcsLines[x]) :
             x += 1
             focal = bcsLines[x]
             focal = focal.rstrip()
-            bcsInfo['ftdLead'] = focal
+            bcsInfo = {'ftdLead': focal}
             w.ftdLead.insert(0,bcsInfo['ftdLead'])
-            print("ftdLead>"+bcsInfo['ftdLead'])'''
+            print("ftdLead>"+bcsInfo['ftdLead'])
+            
+        # Find the line that has the BCS message due date
+        elif re.search('^DUE DATE:  \d.*', bcsLines[x]) :
+            keyDate = after(bcsLines[x], 'DUE DATE:  ')
+            keyDate = keyDate.rstrip()
+            bcsInfo = {'dueDate': keyDate[:11]}
+            w.bcsDueDate.insert(0,bcsInfo['dueDate'])
+            #Add 14 days to the BCS message due date
+            tempDate = datetime.datetime.strptime(bcsInfo['dueDate'], "%d-%b-%Y")+datetime.timedelta(days=14)
+            myDate='{:%d-%b-%Y}'.format(tempDate)
+            w.ftdDueDate.insert(0,myDate)
+            print("dueDate>"+bcsInfo['dueDate'])
+            print("ftd Due Date>"+myDate)
+        # Find the line that has the BCS message number
+        elif re.search('^.MESSAGE NUMBER:.*', bcsLines[x]) :
+            mesNumber = after(bcsLines[x], 'MESSAGE NUMBER:')
+            bcsInfo = {'mNumber': mesNumber[:19]}
+            w.mNumber.insert(0, bcsInfo['mNumber'])
+            print("mNumber>"+bcsInfo['mNumber'])
+            
+        # Find the line that has the BCS message date
+        elif re.search('^MESSAGE DATE:.*', bcsLines[x]) :
+            keyDate = after(bcsLines[x], 'MESSAGE DATE:     ')
+            bcsInfo = {'mDate': keyDate[:11]}
+            w.mDate.insert(0, bcsInfo['mDate'])
+            print("mDate>"+bcsInfo['mDate'])
+ 
+        # Find the line that has the BCS customer
+        elif re.search('^ACCOUNT:.*', bcsLines[x]) :
+            customer = after(bcsLines[x], 'ACCOUNT: ')
+            bcsInfo = {'customer': customer}
+            w.customer.insert(0,bcsInfo['customer'])
+            print("customer>"+bcsInfo['customer'])
 
+        # Find the line that has the BCS product type
+        elif re.search('^PRODUCT TYPE:.*', bcsLines[x]) :
+            pType = after(bcsLines[x], 'PRODUCT TYPE: ')
+            bcsInfo = {'pType': pType}
+            w.pType.insert(0,bcsInfo['pType'])
+            print("pType>"+bcsInfo['pType'])
+
+        # Find the line that has the BCS product line
+        elif re.search('^PRODUCT LINE:.*', bcsLines[x]) :
+            pLine = after(bcsLines[x], 'PRODUCT LINE: ')
+            bcsInfo = {'pLine': pLine}
+            w.pLine.insert(0,bcsInfo['pLine'])
+            print("pLine>"+bcsInfo['pLine'])
+
+        # Find the line that has the BCS product 
+        elif re.search('^PRODUCT:.*', bcsLines[x]) :
+            product = after(bcsLines[x], 'PRODUCT: ')
+            if bcsLines[x+1] != "ATA::":
+                product = product.rstrip() + bcsLines[x+1]
+                x += 1
+            bcsInfo = {'product': product}
+            w.product.insert(0,bcsInfo['product'])
+            print("product>"+bcsInfo['product'])
+           
+
+        # Find the line that has the BCS subject
+        elif re.search('^SUBJECT:.*', bcsLines[x]) :
+            subject = after(bcsLines[x], 'SUBJECT: ')
+            pos_a = subject.rfind('//')
+            if pos_a != -1:  subject = after(subject, '// ')
+            bcsInfo = {'subject': subject}
+            w.subject.insert(0, bcsInfo['subject'])
+#            x += 1
+
+            print("subject>"+bcsInfo['subject'])
+       
        # Find the line that has the BCS attachments
-        if re.search('^REFERENCES:.*', bcsLines[x]) :
+        elif re.search('^REFERENCES:.*', bcsLines[x]) :
             x += 1
             attachment = ['']
             attachment.clear()
@@ -291,13 +266,15 @@ def btnConvert_1click(p1):
             w.attachment.current(0)
 
         # Find the line that has the BCS Message
-        '''elif re.search('^DESCRIPTION:.*', bcsLines[x]) :
+        elif re.search('^DESCRIPTION:.*', bcsLines[x]) :
             bcsDescription=''
+            bcsDescription = between()
             x += 1
             templine = bcsLines[x]
             # Combine all the lines in the description
+            
 
-            if  not re.search( '++++++++++++++++++++++++++++++' , templine ) :
+            if  not re.search('^RESPONSE',templine) :
                 bcsDescription = bcsDescription + templine
                 templine = bcsLines[x]
                 x += 1
@@ -305,7 +282,7 @@ def btnConvert_1click(p1):
             bcsInfo = {'bcsDescription': bcsLines[x]}
             w.message.insert(END, bcsInfo['bcsDescription'])
             print("bcsDescription>"+bcsInfo['bcsDescription'])
-
+            """
             templine = bcsLines[x]
 
             bcsDesire = ''
@@ -316,8 +293,8 @@ def btnConvert_1click(p1):
                 x += 1
                 templine = bcsLines[x]
             bcsInfo = {'bcsDesire': bcsDesire}
-            print("bcsDesire>"+bcsInfo['bcsDesire'])'''
-
+            print("bcsDesire>"+bcsInfo['bcsDesire'])
+            """
         x += 1
 
 def clearform():
@@ -334,31 +311,19 @@ def clearform():
 
 def after(value, a):
     # Find and validate first part.
-    pos_a = value.find(a)
+    pos_a = value.rfind(a)
     if pos_a == -1: return ""
     # Returns chars after the found string.
     adjusted_pos_a = pos_a + len(a)
     if adjusted_pos_a >= len(value): return ""
     return value[adjusted_pos_a:]
 
-def betweenlast(value, a, b):
-    # Find and validate before-part.
-    pos_a = value.rfind(a)
-    if pos_a == -1: return ""
-    # Find and validate after part.
-    pos_b = value.rfind(b)
-    if pos_b == -1: return ""
-    # Return middle part.
-    adjusted_pos_a = pos_a + len(a)
-    if adjusted_pos_a >= pos_b: return ""
-    return value[adjusted_pos_a:pos_b]
-
 def between(value, a, b):
     # Find and validate before-part.
     pos_a = value.find(a)
     if pos_a == -1: return ""
     # Find and validate after part.
-    pos_b = value.find(b)
+    pos_b = value.rfind(b)
     if pos_b == -1: return ""
     # Return middle part.
     adjusted_pos_a = pos_a + len(a)

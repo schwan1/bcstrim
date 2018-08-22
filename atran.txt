@@ -1,0 +1,93 @@
+FROM: THE BOEING COMMUNICATION SYSTEM
+[MESSAGE NUMBER:3-1YVHDR5]      Coordination
+ACTIVITY DATE:  16 Aug 2018 1015 US PACIFIC TIME / 16  Aug 2018 1715 GMT
+
+From the Boeing Communication System for Kent A Benedict
+
+Replies to this email will be recorded in the Boeing Communication system and will be sent to all names listed below.
+
+This Coordination message is sent to the following people at Boeing:
+Gregory C Guest, Mark C Baca
+
+
+DUE DATE:  21-Aug-2018 15:59 US PACIFIC TIME
+
+SUBJECT:  FCOM QRH content issue
+
+DESIRED ACTION:
+
+CC: GREGORY
+
+Mark,
+
+Please advise.
+
+Thank you,
+
+Kent Benedict
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+FROM: THE BOEING COMPANY
+TO: ATRAN (AYP)
+[MESSAGE NUMBER:AYP-AYP-18-0018-01C]      Request
+MESSAGE DATE:  15 Aug 2018 0324 US PACIFIC TIME / 15  Aug 2018 1024 GMT
+
+Your message has been received.  If a response has been requested, it will be provided on or before 22-Aug-2018.        
+
+This message is sent to the following:
+Ruben Karapetyan, at ATRAN
+Mikhail Stepanov, at ATRAN
+Alexander Zubkov, at ATRAN
+
+SERVICE REQUEST ID:     3-4283807077
+PRIORITY:               Routine
+ACCOUNT:                ATRAN (AYP)
+DUE DATE:               22-Aug-2018
+PROJECT:                
+PRODUCT TYPE:           Flight Operations
+PRODUCT LINE:           737
+PRODUCT:                17 - FCOM Technical Content, Systems (Vol 2), Misc
+ATA:                    
+
+AIRPLANE (VARIABLE/SERIAL): PW852/28663       REGISTRY: VP-BCJ
+HOURS/CYCLES:/       WINGLETS: 
+
+AIRPLANE (VARIABLE/SERIAL): PW853/28758       REGISTRY: VP-BCK
+HOURS/CYCLES:/       WINGLETS: 
+
+AIRPLANE (VARIABLE/SERIAL): PW856/29001       REGISTRY: VQ-BVF
+HOURS/CYCLES:/       WINGLETS: 
+
+SUBJECT: FCOM QRH content issue
+
+REFERENCES:
+
+DESCRIPTION:
+ =====================
+Good day, dear collegues/
+At least in last two FCOM & QRH revisions (9 & 10) we encounter content issure. Just some of them:
+FCOM 1.  Auto flight chapter points difference in some placies between PW852, PW853, PW856, but configuration is the same. 2. Engines, APU & Fuel chapter: aii fleet equipped with one type APU, but reflection in FCOM different. We have no fuel used as well as quantity indications in LBS. All fleet with Auto Shutoff Service bulletin 737-28A1216 incorporated. 3. Secondarry landing gear indicators are installed under the same STC, but in FCOM & QRH reflected as different. FMC reflected as different soft and logic. Why?
+
+DESIRED ACTION:
+======================
+Please correct content, advise route cause and if any assistance required.
+
+
+Ruben Karapetyan
+ruben.karapetyan@atran.ru
++79035315721
+
+When present, attachment names are listed below this line:
+
+
+
+Service Request System: https://myboeingfleet.boeing.com/bsrs/client/index.html#/communicationsDetail/3-1YUGUK9
+(Note: MyBoeingFleet portal login is required to access link in the Service Request System)
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
