@@ -210,7 +210,7 @@ class BCS_Message_Converter:
         self.TLabel8.configure(foreground="#000000")
         self.TLabel8.configure(font=font9)
         self.TLabel8.configure(relief=FLAT)
-        self.TLabel8.configure(text='''Messge Date :''')
+        self.TLabel8.configure(text='''Message Date :''')
 
         self.TLabel9 = ttk.Label(self.TFrame1)
         self.TLabel9.place(relx=0.23, rely=0.6, height=24, width=112)

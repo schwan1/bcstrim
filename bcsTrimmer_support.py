@@ -99,6 +99,7 @@ def stdPhrase(p1):
 # Conversion Functions for BCS
 def btnConvert_1click(p1):
     sys.stdout.flush()
+    mtext=''
     obj = w.textScroll
     mtext = obj.get('1.0', 'end')
     bcsLines = mtext.splitlines()
@@ -147,7 +148,7 @@ def btnConvert_1click(p1):
         w.bFocal.insert(0,bcsInfo['bFocal'])
     # Find the line that has the BCS focal
     if bcsInfo['ftdLead'] == 'notset':
-        focal = between(mtext, 'Boeing:', 'DUE DATE:')
+        focal = between(mtext, 'Boeing:\n', 'DUE DATE:')
         focal = focal.rstrip()
         bcsInfo['ftdLead'] = focal
         w.ftdLead.insert(0,bcsInfo['ftdLead'])
@@ -190,6 +191,8 @@ def btnConvert_1click(p1):
     #Subject extraction
     if bcsInfo['subject'] == 'notset':
         subject=between(mtext, 'SUBJECT:', 'DESIRED ACTION:')
+        if subject.find('// ') :
+            subject = between(subject,'// ', '\n')
         subject=subject.strip()
         bcsInfo['subject'] = subject
         w.subject.insert(0,bcsInfo['subject'])
@@ -228,29 +231,16 @@ def btnConvert_1click(p1):
         fieldservice=fieldservice.strip()
         if bcsDescription == fieldservice :
             bcsDescription = ''
-
         bcsDesired=between(mtext, 'DESIRED ACTION:', '+++++++++++')
         bcsDesired=bcsDesired.strip()
         bcsDescription =  "Desired Action:\n\n" + bcsDesired + '\n\n\nASE Additional Description:\n'+bcsDescription + '\n\n\nField Service Description:\n\n'+ fieldservice
+        bcsDescription = cleanmarkup(bcsDescription)
+        bcsDescription = before(bcsDescription, 'Service Request System:')
         bcsInfo['bcsDescription'] = bcsDescription
         w.message.insert(END, bcsInfo['bcsDescription'])
 
     # Delete lines with  '-----' or '####' characters
-    for i in range(len(bcsLines) - 1, -1, -1):
-        element = bcsLines[i]
-        if re.search('^----------', bcsLines[i]) : 
-            del bcsLines[i]
-
-    for i in range(len(bcsLines) - 1, -1, -1):
-        element = bcsLines[i]
-        if re.search('^\+\+\+', bcsLines[i]) : 
-            del bcsLines[i]
-
-    for i in range(len(bcsLines) - 1, -1, -1):
-        element = bcsLines[i]
-        if re.search('^======', bcsLines[i]) : 
-            del bcsLines[i]
-
+    cleanmarkup(mtext)
     x = 1
     j = 0 
     # Loop for filling out data in bcsInfo dictionary
@@ -286,7 +276,6 @@ def btnConvert_1click(p1):
                 attachment.append(tempAttachment.rstrip())
                 x += 1
             bcsInfo = {'attachment': attachment}
- #           
             w.attachment['values'] = attachment
             w.attachment.current(0)
 
@@ -331,7 +320,30 @@ def clearform():
     w.pType.delete(0, END)
     w.pLine.delete(0, END)
     w.subject.delete(0, END)
+def cleanmarkup(cleantext) :
+    #Removes ===, ++++, --- line delimiting characters
+    cleantext = cleantext.splitlines()
+    for i in range(len(cleantext) - 1, -1, -1):
+        element = cleantext[i]
+        if re.search('^----------', cleantext[i]) : 
+            del cleantext[i]
 
+    for i in range(len(cleantext) - 1, -1, -1):
+        element = cleantext[i]
+        if re.search('^\+\+\+', cleantext[i]) : 
+            del cleantext[i]
+
+    for i in range(len(cleantext) - 1, -1, -1):
+        element = cleantext[i]
+        if re.search('^======', cleantext[i]) : 
+            del cleantext[i]
+    sep = "\n"
+    cleantext = sep.join(cleantext)
+    cleantext = cleantext.replace('\n\n\n\n', '\n\n')
+    cleantext = cleantext.replace('\n\n\n', '\n\n')
+    return(cleantext)
+    
+   
 def after(value, a):
     # Find and validate first part.
     pos_a = value.find(a)
